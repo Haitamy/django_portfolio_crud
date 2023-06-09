@@ -1,0 +1,49 @@
+{% extends 'perso/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Testimonials</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          {% for t in testi %}
+          <div class="swiper-slide">
+            <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{t.desc}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+              <img src="{% static 'img/testimonials/' %}{{t.img}}" class="testimonial-img" alt="">
+              <h3>{{t.name}}</h3>
+              <h4>{{t.job}}</h4>
+              <div class='d-flex align-items-center justify-content-center'>
+                <a class='val text-primary' href='/editTesti/{{ t.id }}'> Edit &emsp;</a>
+                <form action="destroyTesti/{{ t.id }}" method='POST'>
+                    {% csrf_token %}
+                    <button type="submit" class='val text-danger bg-light border-0'>Delete&emsp;</button>
+                </form>
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class='addSkillsLinksDiv'>
+        <a class='addSkillsLinks' href={% url 'addTesti' %}>Create Skill</a>
+    </div>
+
+    </div>
+  </section>
+{% endblock content %}

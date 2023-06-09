@@ -1,0 +1,67 @@
+{% extends 'perso/base.html' %}
+{% load static %}
+ {% block content %}
+<section id='admin'>
+    <div class='edit'>
+        <div class="imgEdit">
+            <img src={% static 'img/about.png' %} alt="">
+        </div>
+        <div class="editTxt">
+            <h2>Section About</h2>
+            <p>Vous pouvez modifier les informations de la page via le bouton d'édition</p>
+            <a href="/editAbout/1" class='btn btn-outline-primary'>Edit</a>
+        </div>
+    </div>
+    <div class="edit">
+        <div class="imgEdit">
+            <img src={% static 'img/skills.png' %} alt="">
+        </div>
+        <div class="editTxt">
+            <h2>Section Skills</h2>
+            <p>Vous pouvez modifier les informations de la page via le bouton d'édition</p>
+            <a href="/showSkills/" class='btn btn-outline-primary'>Edit</a>
+        </div> 
+    </div>
+    <div class="edit">
+        <div class="imgEdit">
+            <img src={% static 'img/services.png' %} alt="">
+        </div>
+      <div class='editTxt'>
+        <h2>Section Services</h2>
+        <p>Vous pouvez modifier les informations de la page via le bouton d'édition, créer et supprimer des skills</p>
+        <a href="/showServices/" class='btn btn-outline-primary'>Edit</a>
+      </div>
+    </div>
+    <div class="edit">
+        <div class="imgEdit">
+            <img src={% static 'img/testi.png' %} alt="">
+        </div>
+        <div class='editTxt'>
+            <h2>Section Testimonials</h2>
+            <p>Vous pouvez modifier les informations de la page via le bouton d'édition, créer et supprimer des skills</p>
+            <a href="/showTesti/" class='btn btn-outline-primary'>Edit</a>
+          </div>
+    </div>
+    <div class="edit">
+        <div class="imgEdit">
+            <img src={% static 'img/porto.png' %} alt="">
+        </div>
+        <div class='editTxt'>
+            <h2>Section Portfolio</h2>
+            <p>Vous pouvez modifier les informations de la page via le bouton d'édition, créer et supprimer des skills</p>
+            <a href="/showPorto/" class='btn btn-outline-primary'>Edit</a>
+          </div>
+    </div>
+    <div class="edit">
+        <div class="imgEdit">
+            <img src={% static 'img/contact.png' %} alt="">
+        </div>
+        <div class='editTxt'>
+            <h2>Section Contact</h2>
+            <p>Vous pouvez modifier les informations de la page via le bouton d'édition, créer et supprimer des skills</p>
+            <a href="/showContact/" class='btn btn-outline-primary'>Edit</a>
+          </div>
+    </div>
+</div>
+</section>
+{% endblock content %}
